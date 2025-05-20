@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PromptLab from './PromptLab';
+import EducationalDemos from './EducationalDemos';
 
 export type Slide = {
   title: string;
@@ -421,7 +422,7 @@ const ActualUsageSlide: React.FC = () => {
 };
 
 /* ------------------------------------------------------------------
-   🖼️  Slide 5 – Building with IBM AI Tools (Granite & watsonx.ai)
+   🖼️  Slide 6 – Building with IBM AI Tools (Granite & watsonx.ai)
    ------------------------------------------------------------------*/
 const IBMToolsSlide: React.FC = () => (
   <div className="flex flex-col h-full p-6 bg-[#f4f4f4]">
@@ -563,11 +564,6 @@ const IBMToolsSlide: React.FC = () => (
   </div>
 );
 
-
-
-
-
-
 // Define the slides array using the components
 const slidesData: Slide[] = [
   // Slide 1: Introduction
@@ -598,21 +594,26 @@ const slidesData: Slide[] = [
     content: <ActualUsageSlide />
   },
   
-  // Slide 5: Building with IBM AI Tools
+  // Slide 5: Educational Use Cases Demos
+  {
+    title: "Educational Use Cases",
+    subtitle: "AI Applications for Faculty and Students",
+    content: <EducationalDemos />
+  },
+  
+  // Slide 6: Building with IBM AI Tools
   {
     title: "IBM AI Tools",
     subtitle: "Granite and watsonx.ai",
     content: <IBMToolsSlide />
   },
   
-  // Slide 6: watsonx.ai Prompt Lab Interface
+  // Slide 7: watsonx.ai Prompt Lab Interface
   {
     title: "Prompt Engineering",
     subtitle: "watsonx.ai Prompt Lab",
     content: <PromptLab />
   },
-  
- 
 ];
 
 export default slidesData; 
