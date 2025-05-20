@@ -1,0 +1,63 @@
+@use "@carbon/styles"as *;
+
+@import "tailwindcss"important;
+
+@config "../../tailwind.config.ts";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+  --background: #f4f4f4; // Carbon Gray 10
+  --foreground: #161616; // Carbon Gray 100
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-family: "IBM Plex Sans";
+  --font-size: 16px;
+}
+
+@layer theme {
+  body{
+    color: var(--foreground);
+  }
+  .dark {
+    --background: #161616; // Carbon Gray 100
+    --foreground: #f4f4f4; // Carbon Gray 10
+  }
+}
+
+@layer base {
+  @media print {
+
+    .no-print,
+    .no-print * {
+      display: none !important;
+    }
+  }
+
+  :root{
+    font-size: 16px;
+  }
+
+  @media (min-width: 1441px) {
+    :root {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 1920px) {
+    :root {
+      font-size: 20px;
+    }
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+
+}
